@@ -14,9 +14,10 @@
 
 <body>
 
-  <div id="feedback" class="success">
-    <h3>Success</h3>
-    <p>Your message has been sent. Fingers crossed he receives it.</p>
+  <div id="feedback" class="fail">
+    <a class="dismiss">Dismiss</a>
+    <h3>Oops!</h3>
+    <p>Looks like you forgot to enter your email address.</p>
   </div>
 
   <header>
@@ -27,7 +28,9 @@
     </nav>
   </header>
 
-  <div class="emerson"></div>
+  <div class="emerson">
+    <img src="images/emerson.jpg" alt="Picture of Ralph Waldo Emerson">
+  </div>
 
   <main>
     <strong>Contact</strong>
@@ -44,7 +47,7 @@
     <form>
       <fieldset>
         <input type="text" placeholder="Full Name">
-        <input type="email" placeholder="Email Address">
+        <input type="email" placeholder="Email Address" class="fail">
         <textarea placeholder="Your message..."></textarea>
       </fieldset>
       <input type="submit" class="button">
