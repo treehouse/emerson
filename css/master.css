@@ -29,17 +29,17 @@ FEEDBACK
 #feedback.success {
   transform: translateY(-100px);
   background: #53bbb4;
-  -webkit-animation: feedback-in .3s ease-in-out .5s forwards, feedback-out .3s ease-in-out 5s forwards;
-  -moz-animation:    feedback-in .3s ease-in-out .5s forwards, feedback-out .3s ease-in-out 5s forwards;
-  animation:         feedback-in .3s ease-in-out .5s forwards, feedback-out .3s ease-in-out 5s forwards;
+  -webkit-animation: feedback-in .3s ease-in-out forwards, feedback-out .3s ease-in-out 5s forwards;
+  -moz-animation:    feedback-in .3s ease-in-out forwards, feedback-out .3s ease-in-out 5s forwards;
+  animation:         feedback-in .3s ease-in-out forwards, feedback-out .3s ease-in-out 5s forwards;
 }
 
 #feedback.fail {
   transform: translateY(-100px);
   background: #e15258;
-  -webkit-animation: feedback-in .3s ease-in-out .5s forwards;
-  -moz-animation:    feedback-in .3s ease-in-out .5s forwards;
-  animation:         feedback-in .3s ease-in-out .5s forwards;
+  -webkit-animation: feedback-in .3s ease-in-out forwards;
+  -moz-animation:    feedback-in .3s ease-in-out forwards;
+  animation:         feedback-in .3s ease-in-out forwards;
 }
 
 #feedback.dismissed {
