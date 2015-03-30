@@ -11,11 +11,72 @@ body {
 }
 
 /*
+FEEDBACK
+*/
+
+#feedback {
+  padding: 0px 50px 0;
+  color: #fff;
+  height: 80px;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  transform: translateY(-100px);
+}
+
+#feedback.success {
+  transform: translateY(-100px);
+  background: #53bbb4;
+  -webkit-animation: feedback-in .3s ease-in-out .5s forwards, feedback-out .3s ease-in-out 3s forwards;
+  -moz-animation:    feedback-in .3s ease-in-out .5s forwards, feedback-out .3s ease-in-out 3s forwards;
+  animation:         feedback-in .3s ease-in-out .5s forwards, feedback-out .3s ease-in-out 3s forwards;
+}
+
+#feedback.fail {
+  transform: translateY(-100px);
+  background: #e15258;
+  -webkit-animation: feedback-in .3s ease-in-out .5s forwards;
+  -moz-animation:    feedback-in .3s ease-in-out .5s forwards;
+  animation:         feedback-in .3s ease-in-out .5s forwards;
+}
+
+#feedback.dismissed {
+  transform: translateY(0);
+  -webkit-animation: feedback-out .3s ease-in-out forwards;
+  -moz-animation:    feedback-out .3s ease-in-out forwards;
+  animation:         feedback-out .3s ease-in-out forwards;
+}
+
+#feedback h3 {
+  margin: 18px 0 3px;
+}
+
+#feedback p {
+  margin: 0;
+  font-size: 14px;
+  opacity: .7;
+}
+
+.dismiss {
+  float: right;
+  padding: 30px 0;
+  opacity: .7;
+  cursor: pointer;
+}
+
+.dismiss:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+/*
 HEADER
 */
 
 header {
-  background: #8363b2;
+  background: #384047;
   padding: 0px 50px;
   color: #fff;
   height: 80px;
@@ -49,11 +110,12 @@ header nav a {
 
 nav a:hover {
   opacity: 1;
+  text-decoration: none;
 }
 
 nav .selected {
   opacity: 1;
-  border-bottom: 6px solid #654c8a;
+  border-bottom: 6px solid #53bbb4;
 }
 
 /*
@@ -66,8 +128,12 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 .emerson {
-  background: url(../images/emerson.gif) no-repeat center;
+  background: url(../images/emerson.jpg) no-repeat center;
   background-size: contain;
   width: 50%;
   position: fixed;
@@ -96,12 +162,12 @@ main h2 {
 
 main strong {
   line-height: 1.7;
-  color: #654c8a;
+  color: #5a6772;
 }
 
 main a {
   opacity: .7;
-  color: #8363b2;
+  color: #53bbb4;
 }
 
 main a:hover {
@@ -165,7 +231,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border-color: #8363b2;
+  border-color: #53bbb4;
 }
 
 textarea {
@@ -176,7 +242,7 @@ textarea {
 input[type="submit"],
 .button {
   font-family: 'Roboto', sans-serif;
-  background: #8363b2;
+  background: #53bbb4;
   width: 100%;
   border-radius: 5px;
   color: #fff;
@@ -186,13 +252,13 @@ input[type="submit"],
   padding: 20px;
   font-size: 16px;
   display: block;
-  border-bottom: 2px solid #654c8a;
+  border-bottom: 2px solid #48a39d;
   outline: none;
   transition: background-color .2s, transform .2s;
 }
 
 .button:hover {
-  background-color: #72569c;
+  background-color: #48a39d;
 }
 
 .button:active {
@@ -226,9 +292,93 @@ footer nav a {
 }
 
 footer a {
-  color: #8363b2;
+  color: #53bbb4;
 }
 
 footer strong a:hover {
   text-decoration: underline;
+}
+
+
+/*
+ANIMATION
+*/
+
+@-webkit-keyframes feedback-in {
+  0%   {
+    transform: translateY(-100px);
+  }
+  80% {
+    transform: translateY(0px);
+    padding-top: 5px;
+  }
+  100% {
+    transform: translateY(0);
+    padding-top: 0;
+  }
+}
+@-moz-keyframes feedback-in {
+  0%   {
+    transform: translateY(-100px);
+  }
+  80% {
+    transform: translateY(0);
+    padding-top: 5px;
+  }
+  100% {
+    transform: translateY(0);
+    padding-top: 0;
+  }
+}
+@keyframes feedback-in {
+  0%   {
+    transform: translateY(-100px);
+  }
+  80% {
+    transform: translateY(0);
+    padding-top: 5px;
+  }
+  100% {
+    transform: translateY(0);
+    padding-top: 0;
+  }
+}
+
+/* out*/
+
+@-webkit-keyframes feedback-out {
+  0%   {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0px);
+    padding-top: 5px;
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+@-moz-keyframes feedback-out {
+  0%   {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0px);
+    padding-top: 5px;
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+@keyframes feedback-out {
+  0%   {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0px);
+    padding-top: 5px;
+  }
+  100% {
+    transform: translateY(-100px);
+  }
 }
